@@ -1,0 +1,51 @@
+
+
+
+<h5 > Questions of {{ qtitle}} Quiz </h5>
+
+
+    <button class="mb10" [routerLink]="['/admin/add-question',qId]"
+     mat-raised-button color="accent">Add Question</button>
+
+
+<div class="bootstrap-wrapper con">
+    <div class="row">
+        <div class="col-md-12">
+            <mat-card *ngFor="let q of questions">
+                <p class="q">
+                   
+                    <ul><li>
+                        <span class="ml20" [innerHTML]="q.content"></span></li>
+                    </ul>
+                    
+                
+
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 s1">
+                            <p><b>1) </b>{{q.option1}}</p>
+
+                        </div>
+                        <div class="col-md-6 s1">
+                            <p><b>2) </b>{{q.option2}}</p>
+                        </div>
+                        <div class="col-md-6 s1">
+                            <p><b>3) </b>{{q.option3}}</p>
+                        </div>
+                        <div class="col-md-6 s1">
+                            <p><b>4) </b>{{q.option4}}</p>
+                        </div>
+                    </div>
+
+                    <mat-divider></mat-divider>
+                    <p class="mt20">
+                        <b> Correct Answer :{{q.answer}}</b>
+                    </p>
+                    <mat-divider></mat-divider>
+                </div>
+            </mat-card>
+
+        </div>
+    </div>
+</div>

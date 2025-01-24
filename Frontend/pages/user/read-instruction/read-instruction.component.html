@@ -1,0 +1,49 @@
+
+
+
+
+<div class="bootstrap-wrapper">
+
+    <div class="container">
+        <div class="row">
+            <mat-card>
+                <!-- heading. -->
+                <mat-card-header>
+                   
+                    <ul>
+                        <li>Read each question carefully before answering.</li>
+                        <li>Avoid skipping questions unless necessary, as unanswered questions may reduce your score.</li>
+                        <li>Double-check your answers before submitting.</li>
+                        <li>Submit your answers within the allotted time frame.</li>
+                        <li>You have to submit the Quiz within {{quiz.noOfQuestion*2}} Minutes. </li>
+                    
+                    </ul>
+
+                </mat-card-header>
+                <!-- content -->
+                <mat-card-content>
+                    <h4>Important Questions</h4>
+
+                    <ul>
+                        <b><li>{{quiz.title}}</li></b>
+                        <li>{{quiz.description}}</li>
+                        <li>Maxumim Marks for this Quiz =  {{quiz.maxMarks}}</li>
+                        <li>Total Question in this {{quiz.title}} is =  {{quiz.noOfQuestion}} </li>
+                        <li>
+                            <p>Each Question have  {{quiz.maxMarks/quiz.noOfQuestion}} Marks </p>
+                        </li>
+                    </ul>
+                    
+                </mat-card-content>
+
+                <div class="text-center mb20">
+                    <button mat-raised-button color="accent" 
+
+                    [routerLink]="['/user-dashboard/start', quiz.qid]">
+                    Star Quiz</button>
+                </div>
+            
+            </mat-card>
+        </div>
+    </div>
+</div>

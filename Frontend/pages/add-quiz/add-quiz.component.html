@@ -1,0 +1,103 @@
+
+
+
+
+{{quizData | json }}
+
+
+<mat-card class="card-container">
+    <mat-list class="l">
+      <h4 class="">Add New Category</h4>
+  
+      <!-- Form -->
+      <form (ngSubmit)="addDataQuiz()" #categoryForm="ngForm">
+        <!--  quiz title -->
+        <mat-form-field class="example-full-width">
+          <input
+            required
+            autofocus
+            matInput
+            [(ngModel)]="quizData.title"
+            name="title"
+            placeholder="Add Quiz Title"
+            required
+          />
+        </mat-form-field>
+        <br />
+
+        <!--  description field -->
+        <mat-form-field class="example-full-width">
+          <textarea
+            matInput
+            [(ngModel)]="quizData.description"
+            name="description"
+            placeholder="Add Description of Title"
+            rows="1"
+            cols="50"
+            required
+          ></textarea>
+        </mat-form-field>
+        <br>
+
+
+        <!--  enter maximum marks -->
+        <div class="row side">
+          
+          <!--  enter maximum marks -->
+          <mat-form-field class="example-full-width">
+            <input class="s1"
+              matInput
+              [(ngModel)]="quizData.maxMarks"
+              name="maxMarks"
+              placeholder="Enter Maximum Marks"
+              required
+            />
+          </mat-form-field>
+
+          <!--  enter noofquestions.  -->
+          <mat-form-field class="example-full-width">
+            <input class="s2"
+              matInput
+              [(ngModel)]="quizData.noOfQuestion"
+              name="noOfQuestion"
+              placeholder="Enter Total Questions"
+              required
+            />
+          </mat-form-field>
+        </div>
+
+        
+
+        <!-- Category Selection -->
+     <mat-form-field class="example-full-width">
+        <mat-label>Category</mat-label>
+        <mat-select [(ngModel)]="quizData.category.id"  name="categoryid">
+          <mat-option *ngFor="let c of categoryies" [value]="c.id">
+            {{ c.title }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field> 
+      
+    
+        
+
+
+
+        
+  <!-- Submit Button inside the form -->
+        <div class="text-center">
+          <button mat-raised-button color="accent" type="submit">
+            Add Quiz
+          </button>
+        </div>
+  </form>
+  
+      
+  </mat-list>
+  </mat-card>
+  
+  
+  
+  <!-- submit button should be in form only, else it willnot work. -->
+
+

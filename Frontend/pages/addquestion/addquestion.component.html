@@ -1,0 +1,118 @@
+
+<h5>Add Questions</h5>
+
+{{ question | json }}
+
+
+<mat-card class="card-container">
+    <mat-list class="l">
+      <h4 class="">Add New Questions</h4>
+  
+      <!-- Form -->
+      <form (ngSubmit)="addQuestion()" #categoryForm="ngForm">
+        <!--  quiz title -->
+        <mat-form-field class="example-full-width s11">
+          
+          <textarea
+            matInput
+            [(ngModel)]="question.content"
+            name="content"
+            placeholder="Add content of question"
+            rows="5"
+            cols="60"
+            required
+          ></textarea>
+        </mat-form-field>
+        <br />
+
+          <!--  enter maximum marks -->
+          
+          <div>
+            <mat-form-field class="example-full-width">
+              <input class="s1"
+                matInput
+                [(ngModel)]="question.option1"
+                name="option1"
+                placeholder="Enter option1"
+                required
+              />
+            </mat-form-field>
+                    
+  
+            
+              
+              <!--  enter maximum marks -->
+              <mat-form-field class="example-full-width s3">
+                <input 
+                  matInput
+                  [(ngModel)]="question.option2"
+                  name="option2"
+                  placeholder="Enter option2"
+                  required
+                />
+              </mat-form-field>
+          </div>
+        
+          
+          <div>
+            <!--  enter noofquestions.  -->
+          <mat-form-field class="example-full-width">
+            <input class="s2"
+              matInput
+              [(ngModel)]="question.option3"
+              name="option3"
+              placeholder="Enter option3"
+              required
+            />
+          </mat-form-field>
+
+          
+          <!--  opton4..  -->
+          <mat-form-field class="example-full-width s3">
+            <input
+              matInput
+              [(ngModel)]="question.option4"
+              name="option4"
+              placeholder="Enter option4"
+              required
+            />
+          </mat-form-field>
+          </div>
+
+           <!--  answer. -->
+           <mat-form-field class="example-full-width">
+            <mat-label>Select Answer</mat-label>
+            
+              <mat-select  name="select1" [(ngModel)]="question.answer">
+                <mat-option *ngIf="question.option1"  [value]="question.option1">{{question.option1}}</mat-option>
+                <mat-option *ngIf="question.option2" [value]="question.option2">{{question.option2}}</mat-option>
+                <mat-option *ngIf="question.option3" [value]="question.option3">{{question.option3}}</mat-option>
+                <mat-option *ngIf="question.option4" [value]="question.option4">{{question.option4}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+        
+
+    
+        
+
+
+
+        
+  <!-- Submit Button inside the form -->
+        <div class="text-center">
+          <button mat-raised-button color="accent" type="submit">
+            Add Quiz
+          </button>
+        </div>
+  </form>
+  
+      
+  </mat-list>
+  </mat-card>
+  
+  
+  
+  <!-- submit button should be in form only, else it willnot work. -->
+
+

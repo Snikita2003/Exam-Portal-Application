@@ -1,0 +1,81 @@
+
+
+
+    <mat-card class="text-center" *ngIf="user">  
+        
+
+        <h4>Your Profile Detail</h4>
+        <mat-card-content>
+            
+            <div class="bootstrap-wrapper">
+
+                <div class="container text-center">
+                    
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg" 
+                    class="profileimg" 
+                    alt="Default Profile Picture">
+                    <h2> {{ user.username}} {{ user.password }} </h2>
+
+                
+                </div>
+
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <!-- table detail -->
+
+                        
+                            <!-- {{ user | json }} -->
+                              
+                            <br>
+                        <table class="table text-center">
+                            <tr>
+                                <td>Username</td>
+                                <td *ngIf="user.username">  {{ user.username }} </td>
+                            </tr>
+                            <tr>
+                                <td>Password</td>
+                                <td *ngIf="user.password" > {{ user.password }}  </td>
+                            </tr>
+
+                            <tr>
+                                <td>Lastname</td>
+                                <td> {{ user.lastname }}</td>
+                            </tr>
+                            <tr>
+                                <td>MobileNo</td>
+                                <td> {{ user.phone }} </td>
+                            </tr>
+                            <tr>
+                                <td>Role</td>
+                                <td>{{ user?.authorities[0].authority  }}</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Status</td>
+                                <td> {{ user.enableed?"Active":"NotActive" }} </td>
+                            </tr>
+
+
+                        </table>
+                          
+                          
+
+                        
+
+
+                    </div>        
+                    
+                    
+                </div>
+            </div>
+
+            <mat-card-actions>
+                <button class="mr20" mat-raised-button color='primary' type="submit">UPDATE</button>
+                <button mat-raised-button color='accent' >SHARE</button>
+            </mat-card-actions>
+
+
+        </mat-card-content>
+
+
+    </mat-card>

@@ -1,0 +1,29 @@
+
+
+.truncate{
+
+    display: block;
+}
+
+
+
+mat-card{
+    padding: 10px;
+
+}
+
+
+.action{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 7px;
+   
+}
+
+/* 
+.action button{
+    box-shadow: 1px 1px rgb(230, 179, 179);
+
+} */
+

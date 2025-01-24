@@ -1,0 +1,39 @@
+
+
+.options{
+    margin: 10px;
+    /* display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; */
+    
+
+}
+
+input{
+    margin: 10px;
+
+}
+
+mat-card{
+    margin-top: 10px;
+}
+.t 
+{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+button{
+    width: 100%;
+
+}
+
+
+.spinner{
+    width: 200px;
+    height: 100px;
+
+}

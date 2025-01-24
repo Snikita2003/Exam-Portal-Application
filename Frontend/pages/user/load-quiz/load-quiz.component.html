@@ -1,0 +1,45 @@
+
+
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <h2>Available Quizzes</h2>
+        <div class="row mt20">
+            <div class="col-md-6" *ngFor="let q of getAllQuizzes">
+
+                <mat-card class="mb20 c">
+                    
+                    <mat-card-header>
+                        <mat-card-title>
+                            {{q.title}}
+                        </mat-card-title>
+                        <mat-card-subtitle class="truncate">
+                            {{ q.description  }}
+                        </mat-card-subtitle>
+                    </mat-card-header>
+
+                    
+
+                    <br>
+                
+                    <div class="action">
+                        
+                        
+                        <button mat-raised-button color="accent" [routerLink]="['/user-dashboard/instruction/', q.qid  ]">Start</button>
+                        <button mat-button color="accent">question:{{q.noOfQuestion}}</button>
+                        <button mat-button color="accent"> M.M:{{q.maxMarks}}</button>
+                    </div>
+                
+                </mat-card>
+            </div>
+
+
+            <div class="col-md-12" *ngIf="getAllQuizzes.length==0">
+                <mat-card>
+                    <mat-card-content>
+                        <h3>No Quiz in this category</h3>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

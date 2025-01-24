@@ -1,0 +1,75 @@
+
+
+
+<mat-card appearance="outlined">
+    <mat-list>
+      <h4 class="text-center">All Quizzes</h4>
+  
+      <!-- Grid container for displaying cards -->
+      <div class="grid-container">
+        <div *ngFor="let p of quiz" class="item">
+          <!-- Mat-card for each category -->
+          
+          <mat-card class="category-card pad10">
+              <mat-card-header>
+                <mat-card-title>{{ p.title }}</mat-card-title>
+                
+                <mat-card-subtitle >{{ p.description }}</mat-card-subtitle>
+
+                <!-- for question button -->
+                <mat-card-subtitle class="sub-buttons text-center">
+
+                  <button 
+                    [routerLink]="['/admin/view-question', p.qid,p.title]" 
+                    mat-raised-button 
+                    color="accent">
+                    Questions
+                  </button>
+              
+                        
+                
+                <!-- Maxmarks,totalquestions,attemps;
+                   -->
+                
+                         <!-- for MacMArks button -->
+                         <button
+                         routerLink="/admin/"
+                         mat-raised-button >MaxMarks: {{p.maxMarks}}
+                          </button> 
+
+                          <!-- for totalQuestion button -->
+                          <button
+                                routerLink="/admin/"
+                                mat-raised-button >TotalQuestion :{{p.noOfQuestion}}
+                          </button>  
+                          
+                          <!-- for Attemts button -->
+                          <button
+                                routerLink="/admin/"
+                                mat-raised-button color="accent">Attempts
+                          </button> 
+                           <!-- for delete button -->
+                           <button  (click)="deleteQuiz(p.qid)"
+                           routerLink="/admin/"
+                           mat-raised-button color="accent" >Delete Quiz
+                     </button> 
+                </mat-card-subtitle>
+
+                <!-- end subbuttons. -->
+                
+              </mat-card-header>
+
+          </mat-card>
+        </div>
+      </div>
+
+
+      
+<div class="text-center  mt20 mb10">
+  <button
+  routerLink="/admin/"
+  mat-raised-button color="accent">Add New Quiz..</button>
+</div>
+    </mat-list>
+  </mat-card>
+

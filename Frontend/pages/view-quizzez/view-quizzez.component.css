@@ -1,0 +1,32 @@
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px; 
+    padding: 10px;
+  }
+  
+  .item {
+    border: 0px solid #ccc;
+    padding: 10px;
+    box-shadow: 1px 1px rgb(213, 121, 177);
+    border-radius: 8px;
+    background-color: #f8ebeb;
+   
+  }
+
+
+  .sub-buttons{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+
+  .sub-buttons button{
+    box-shadow: 2px 2px rgb(229, 169, 169);
+  }

@@ -1,0 +1,60 @@
+<div class="bootstrap-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Questions Section -->
+      <div class="col-md-8">
+        <!-- Quiz Title -->
+        <h3>{{ questions[0]?.quiz?.title }}</h3>
+
+        <!-- Questions -->
+        <mat-card *ngFor="let q of questions; let i = index" class="mb-3">
+          <mat-card-content>
+            <b>Q{{ i + 1 }}) </b> {{ q.content }}
+            <mat-divider></mat-divider>
+
+            <!-- Options -->
+            <div class="row options">
+              <div class="col-md-12">
+                <div class="form-check" *ngFor="let option of [q.option1, q.option2, q.option3, q.option4]; let optIndex = index">
+                  <input
+                    type="radio"
+                    [(ngModel)]="q.givenans"
+                    [value]="option"
+                    [name]="'option' + i"
+                    class="form-check-input"
+                  />
+                  <label class="form-check-label">{{ option }}</label>
+                </div>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+        <!-- Submit Button -->
+        <div class="text-end">
+          <button mat-raised-button type="submit" (click)="submitQuiz()" color="accent">Submit</button>
+        </div>
+      </div>
+
+      <!-- Timer function Spinner Section -->
+      <div class="col-md-2 offset-md-2">
+        <mat-card class="text-center">
+          <mat-card-header>
+            <mat-card-subtitle>Quiz will automatically submit when time finishes</mat-card-subtitle>
+            <br>
+
+          {{ getFormattedTime() }}
+          </mat-card-header>
+          <mat-card-content>
+            <mat-spinner
+              mode="determinate"
+              [value]="(timer/(this.questions.length*2*60))*100"
+              class="mx-auto"
+              color="accent"
+            ></mat-spinner>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

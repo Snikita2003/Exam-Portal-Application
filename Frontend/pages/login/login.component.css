@@ -1,0 +1,23 @@
+
+
+.text-center
+{
+    text-align: center;
+}
+
+.full-width{
+    width: 100%;
+
+
+}
+
+.btn> button {
+    background-color: rgb(20, 20, 97);
+    color: rgb(97, 190, 181);
+}
+
+.pad{
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}

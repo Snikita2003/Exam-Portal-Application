@@ -1,0 +1,23 @@
+
+.l{
+    text-align: center;
+
+}
+h4{
+    margin-bottom: 20px;
+}
+.example-form {
+    min-width: 100px;
+    max-width: 400px;
+    width: 50%;
+    
+  }
+  
+  .example-full-width {
+    width: 50%;
+  }
+button{
+    margin-top: 20px;
+}
+
+  
